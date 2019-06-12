@@ -15,6 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contact', function() {
-    return view('contact');
-})
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+/**
+ * Client routes
+ */
+Route::post('/clients', 'ClientController@store');
+
+Route::get('/clients', 'ClientController@index')->name('client_index');
+
+Route::get('/clients/create', 'ClientController@create')->name('client_create');
+
+Route::get('/clients/delete', 'ClientController@delete')->name('client_delete');
+
+Route::get('/clients/edit', 'ClientController@edit')->name('client_edit');
