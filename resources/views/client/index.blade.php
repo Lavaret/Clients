@@ -30,7 +30,9 @@
                     <td>{{$client->firstname}}</td>
                     <td>{{$client->lastname}}</td> 
                     <td>{{$client->age}}</td>
-                    <td>edit - delete</td>
+                    <td>
+                        <a href="{{ route('client_edit', ['id' => $client->id]) }}">Edit</a>
+                    </td>
                 </tr>
 
                 @endforeach

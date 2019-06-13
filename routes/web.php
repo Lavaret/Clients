@@ -24,10 +24,14 @@ Route::get('/home', 'HomeController@index')->name('home');
  */
 Route::post('/clients', 'ClientController@store');
 
+Route::patch('/clients/{client}', 'ClientController@update');
+
 Route::get('/clients', 'ClientController@index')->name('client_index');
 
 Route::get('/clients/create', 'ClientController@create')->name('client_create');
 
 Route::get('/clients/delete', 'ClientController@delete')->name('client_delete');
 
-Route::get('/clients/edit', 'ClientController@edit')->name('client_edit');
+Route::get('/clients/{client}/edit', 'ClientController@edit')->name('client_edit');
+
+Route::delete('/clients/{client}', 'ClientController@delete');
